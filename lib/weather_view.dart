@@ -68,11 +68,13 @@ class _WeatherViewBody extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
-            Image.network(
-                'https://openweathermap.org/img/wn/${weather.icon}@4x.png'),
+            Image.network('https://openweathermap.org/img/wn/${weather.icon}@4x.png'),
             Text(
               weather.description,
-              style: const TextStyle(color: Colors.white, fontSize: 24),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+              ),
             ),
             Text(
               '${weather.temperature}°C',
@@ -84,7 +86,10 @@ class _WeatherViewBody extends StatelessWidget {
             ),
             Text(
               '${weather.pressureMmHg} мм рт. ст',
-              style: const TextStyle(color: Colors.white, fontSize: 24),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+              ),
             ),
           ],
         ),
