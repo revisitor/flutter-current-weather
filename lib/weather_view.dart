@@ -16,7 +16,27 @@ class WeatherView extends StatefulWidget {
   State<WeatherView> createState() => _WeatherViewState();
 }
 
-class _WeatherViewState extends State<WeatherView> {
+class _WeatherViewState extends State<WeatherView> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _logger.i(state);
+      setState(() {});
+    }
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
