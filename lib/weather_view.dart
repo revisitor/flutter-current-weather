@@ -68,7 +68,10 @@ class _WeatherViewBody extends StatelessWidget {
                 fontSize: 24,
               ),
             ),
-            Image.network('https://openweathermap.org/img/wn/${weather.icon}@4x.png'),
+            Image.network(
+              'https://openweathermap.org/img/wn/${weather.icon}@4x.png',
+              color: Colors.white,
+            ),
             Text(
               weather.description,
               style: const TextStyle(
