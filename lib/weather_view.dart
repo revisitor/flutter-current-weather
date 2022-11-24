@@ -54,7 +54,7 @@ class _WeatherViewState extends State<WeatherView> with WidgetsBindingObserver {
             }
 
             if (snapshot.hasError) {
-              _logger.e(snapshot.error! as Error);
+              _logger.e(snapshot.error!);
               return const _WeatherViewErrorBody();
             }
 
